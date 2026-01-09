@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Mona Sans', sans-serif;
+}
+
+/* html, body {
+  height: 100vh;
+  overflow: hidden;
+} */
+
+input, textarea, select {
+  touch-action: manipulation;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.sidebar-main{
+    height: -webkit-fill-available !important;
+}
+
+.embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+
+
+  /* Spinner Container */
+.spinner {
+    width: 70px;
+    height: 70px;
+    border: 8px solid rgba(0, 0, 0, 0.1); /* Light gray border */
+    border-top: 8px solid white; /* Blue border at the top */
+    border-radius: 50%; /* Make it a circle */
+    animation: spin 1s linear infinite; /* Infinite spinning */
+  }
+  
+  /* Keyframes for spinning animation */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #1F2136 inset !important; /* Force background color */
+    color: #fff !important; /* Change text color */
+    border: none !important; /* Remove border */
+  }
+  
+  input:-webkit-autofill::first-line {
+    color: #fff !important; /* Change text color for the first line */
+  }
+
+  /* Betslip card animation */
+  .betslip-card {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .betslip-card.betslip-animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* --------- Label animation --------------- */
+
+  .animation-container {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    background-color: #f0f0f0;
+    overflow: hidden; /* Prevent div from being visible outside viewport */
+    cursor: pointer;
+  }
+  
+  .animated-div {
+    width: 96px;
+    height: 50px;
+    background-color: #3498db;
+    position: absolute;
+    border-radius: 5;
+    opacity: 0.3;
+    z-index: 1000;
+    animation: moveOut .5s linear;
+  }
+  
+  @keyframes moveOut {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    100% {
+      transform: translate(300px, 300px) scale(0);
+      opacity: 0;
+    }
+  }
+  
+
+  .iframe-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    --max-height: calc(100vw * 9 / 16);
+  }
+  .iframe-container-landscape {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 72px);
+  }
+  
+  .iframe-container iframe {
+    flex-grow: 1; 
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    width: 100%;
+    border: none;
+    background-color: #1c1c1c; /* Optional: Match your theme */
+  }
+  
+  .bottom-controls {
+    height: 63px; /* Ensure this matches the height of your bottom controls */
+  }
+  
+  @media (max-width: 1024px ) {
+    .sidebar-main{
+      height: auto !important;
+    }
+    .iframe-container{
+      height: 80vh;
+    }
+    .iframe-container-landscape {
+      height: 82vh;
+    }
+  }
+
+  @media (min-width: 1024px ) {
+    .iframe-container{
+      max-height: 655px;
+    }
+  }
+
+  @media (max-width: 768px ) {
+    .iframe-container-landscape {
+      height: 65vh;
+    }
+  }
+
+  .bg-lucky-draw {
+    background-image: url('./assets/Tickets/back\ drop.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;;
+  }
+  
